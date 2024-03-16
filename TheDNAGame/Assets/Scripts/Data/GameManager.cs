@@ -9,22 +9,27 @@ namespace GameEssentials.GameManager
 {
     public class GameManager : MonoBehaviour
     {
-        private static GameManager _instance;
+        public static GameManager Instance;
 
-        public static GameManager Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new GameManager();
+        /// <summary>
+        /// Dictates which scene to load
+        /// </summary>
+        public int sceneToLoad;
 
-                return _instance;
-            }
-        }
+
+        // Define any variables that we can store and track here
+        // We can store them locally in a persistent drive somewhere in the device
+        public int playerScore;
+        public int playerCoins;
+        public int totalGameTimeSession; // Might be unnecessary
 
         // Awake is called at the very first instance the game loads or this object gets enabled
         private void Awake()
         {
+            if(Instance == null)
+                Instance = this;
+
+
             DontDestroyOnLoad(gameObject);
         }
 
@@ -41,4 +46,12 @@ namespace GameEssentials.GameManager
 
         }
     }
+}
+
+
+public class PlayerData
+{
+    public int playerScore;
+    public int playerCoins;
+    public int totalGameTimeSession;
 }
