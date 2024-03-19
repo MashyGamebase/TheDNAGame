@@ -16,6 +16,8 @@ public class ObjectivesRecombinantDNA : MonoBehaviour
 {
     public PlayState currentState;
 
+    public GameObject gameWinLose;
+
     public int score;
     public TextMeshProUGUI scoreText;
 
@@ -175,7 +177,8 @@ public class ObjectivesRecombinantDNA : MonoBehaviour
         if(currentTime <= 0f)
         {
             //Lose
-            Debug.Log("Timer Ran out!");
+            gameWinLose.SetActive(true);
+            //Debug.Log("Timer Ran out!");
         }
     }
 

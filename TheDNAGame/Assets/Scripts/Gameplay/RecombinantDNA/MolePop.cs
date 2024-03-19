@@ -51,7 +51,8 @@ public class MolePop : MonoBehaviour
                 Destroy(this.gameObject, 0.1f);
                 break;
             case Type.Bomb:
-                Debug.Log("LOSE");
+                //Debug.Log("LOSE");
+                ObjectivesRecombinantDNA.Instance.gameWinLose.SetActive(true);
                 Destroy(this.gameObject, 0.1f);
                 break;
         }
