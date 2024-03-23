@@ -4,5 +4,6 @@ public enum Nucleotide
     T,
     G,
     C,
-    U
+    U,
+    None
 }

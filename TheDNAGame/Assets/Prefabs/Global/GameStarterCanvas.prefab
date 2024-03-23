@@ -333,7 +333,7 @@ MonoBehaviour:
   minigameTitles:
   - Recombinant DNA
   - Feedback Mechanism
-  - Central Dogma of Molecular Biology (DNA)
+  - Central Dogma ofMolecular Biology (DNA)
   minigameInfo:
   - 'A classic Whack-a-Mole game, these moles have an answer in their heads that
     corresponds to the answer of the question.

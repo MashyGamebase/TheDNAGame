@@ -14,7 +14,7 @@ public class DragAminoBehavior : MonoBehaviour
     public string destinationTag = "DropZone";
     public Nucleotide nucleotide;
     public State state = State.Dynamic;
-
+    public Polypeptide polypeptide = Polypeptide.None;
 
     /**
      * 0 - A
@@ -32,7 +32,7 @@ public class DragAminoBehavior : MonoBehaviour
     {
         _renderer = GetComponent<Renderer>();
         rb = GetComponent<Rigidbody>();
-        if (state == State.Dynamic)
+        if (state == State.Dynamic && polypeptide == Polypeptide.None)
         {
             rb.isKinematic = false;
 
@@ -101,13 +101,15 @@ public class DragAminoBehavior : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                 // If AminoAcid matches the correct one then Positive Feedback
                 // Else Negative feedback
-                if (hitInfo.transform.gameObject.GetComponent<CodonMatch>().isMatch(nucleotide))
+                if (hitInfo.transform.gameObject.GetComponent<CodonMatch>().isMatch(nucleotide, polypeptide, this.gameObject))
                 {
+                    ObjectiveHandler.instance.score += 10;
                     transform.GetComponent<Collider>().enabled = false;
                     state = State.Static;
                 }
                 else
                 {
+                    ObjectiveHandler.instance.score -= 5;
                     transform.GetComponent<Collider>().enabled = true;
                     rb.isKinematic = false;
                 }

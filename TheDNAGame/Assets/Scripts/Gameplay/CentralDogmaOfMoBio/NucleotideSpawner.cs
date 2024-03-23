@@ -29,6 +29,8 @@ public class NucleotideSpawner : MonoBehaviour
                     Random.Range(-45f, 45f),
                     Random.Range(-45f, 45f),
                     Random.Range(-45, 45f)));
+
+                instantiatedObj.transform.parent = this.transform;
             }
             yield return new WaitForSeconds(spawnDelay);
         }
