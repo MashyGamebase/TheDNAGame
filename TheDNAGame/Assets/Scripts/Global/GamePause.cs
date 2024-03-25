@@ -22,4 +22,10 @@ public class GamePause : MonoBehaviour
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(0);
     }
+
+    public void OnClick_RestartButton()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

@@ -15,15 +15,9 @@ public class LoadMenuControl : MonoBehaviour
 
     IEnumerator LoadAndSwitchScenes(int sceneToLoad)
     {
+        yield return new WaitForSeconds(Random.Range(1, 3));
+
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
-
-        while(!asyncLoad.isDone)
-        {
-            // if there is a loading bar, you can update it here
-
-            yield return null;
-        }
-
 
         // sceneLoaded = true;
     }

@@ -1,3 +1,4 @@
+using GameEssentials.GameManager;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +7,9 @@ using UnityEngine;
 
 public class ObjectiveHandler : MonoBehaviour
 {
+    // 3rd minigame
+    public int levelId = 2;
+
     public GameObject gameWinLose;
 
     [Header("Gameplay Objectives")]
@@ -108,6 +112,11 @@ public class ObjectiveHandler : MonoBehaviour
         if (currentTime <= 0f)
         {
             //Lose
+            if (score > 0)
+            {
+                GameManager.Instance.isLevelComplete[levelId] = true;
+            }
+
             gameWinLose.SetActive(true);
             //Debug.Log("Timer Ran out!");
         }

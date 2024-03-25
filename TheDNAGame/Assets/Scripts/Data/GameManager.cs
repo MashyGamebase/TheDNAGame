@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// This is where all the data lives
@@ -16,6 +17,10 @@ namespace GameEssentials.GameManager
         /// </summary>
         public int sceneToLoad;
 
+        /// <summary>
+        /// Dictates whether or not we can unlock the level
+        /// </summary>
+        public bool[] isLevelComplete;
 
         // Define any variables that we can store and track here
         // We can store them locally in a persistent drive somewhere in the device
@@ -26,13 +31,15 @@ namespace GameEssentials.GameManager
         // Awake is called at the very first instance the game loads or this object gets enabled
         private void Awake()
         {
-            if(Instance == null)
-                Instance = this;
+            Instance = this;
 
+            for(int i = 0; i < isLevelComplete.Length; i++)
+            {
+                isLevelComplete[i] = PlayerPrefs.GetInt("LevelComplete" + i) == 1 ? true : false;
+            }
 
             DontDestroyOnLoad(gameObject);
         }
-
 
         // Start is called before the first frame update
         void Start()
@@ -44,6 +51,15 @@ namespace GameEssentials.GameManager
         void Update()
         {
 
+        }
+
+        private void OnApplicationQuit()
+        {
+            for(int i = 0; i < isLevelComplete.Length; i++)
+            {
+                PlayerPrefs.SetInt("LevelComplete" + i, isLevelComplete[i] == true ? 1 : 0);
+            }
+            PlayerPrefs.Save();
         }
     }
 }

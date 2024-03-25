@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using GameEssentials.GameManager;
 
 public enum PlayState
 {
@@ -14,6 +15,9 @@ public enum PlayState
 
 public class ObjectivesRecombinantDNA : MonoBehaviour
 {
+    // 1st minigame
+    public int levelId = 0;
+
     public PlayState currentState;
 
     public GameObject gameWinLose;
@@ -177,6 +181,12 @@ public class ObjectivesRecombinantDNA : MonoBehaviour
         if(currentTime <= 0f)
         {
             //Lose
+
+            if(score > 0)
+            {
+                GameManager.Instance.isLevelComplete[levelId] = true;
+            }
+
             gameWinLose.SetActive(true);
             //Debug.Log("Timer Ran out!");
         }

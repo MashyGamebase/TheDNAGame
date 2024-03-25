@@ -55,6 +55,22 @@ public class GameStarter : MonoBehaviour
                 minigameTitle.text = minigameTitles[2];
                 minigameDesc.text = minigameInfo[2];
                 break;
+            case 3:
+                minigameTitle.text = minigameTitles[3];
+                minigameDesc.text = minigameInfo[3];
+                break;
+            case 4:
+                minigameTitle.text = minigameTitles[4];
+                minigameDesc.text = minigameInfo[4];
+                break;
+            case 5:
+                minigameTitle.text = minigameTitles[5];
+                minigameDesc.text = minigameInfo[5];
+                break;
+            case 6:
+                minigameTitle.text = minigameTitles[6];
+                minigameDesc.text = minigameInfo[6];
+                break;
             default: // Just in case
                 break;
         }

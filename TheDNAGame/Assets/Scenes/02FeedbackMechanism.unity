@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17325523, g: 0.21655914, b: 0.2986011, a: 1}
+  m_IndirectSpecularColor: {r: 0.17325506, g: 0.21655887, b: 0.2986003, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1848,6 +1848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bbc928fbc0f90747965adc0b8cdc06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelId: 1
   gameWinLose: {fileID: 1224210468}
   meter: {fileID: 370618963}
   score: 0
@@ -2686,6 +2687,17 @@ PrefabInstance:
     - target: {fileID: 842008244978331280, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
       propertyPath: minigameID
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 842008244978331280, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
+      propertyPath: minigameInfo.Array.data[2]
+      value: 'We''re inside a lab in the forefront of genetic research! Unfortunately
+        our scientist in charge of transcribing and translating the DNA is sick!
+        We assigned you as our substitute for this task as you are the most qualified!
+
+
+        Drag
+        the Nucleotide cubes in the right RNA equivalent on the block and distinguish
+        its Polypeptide!'
       objectReference: {fileID: 0}
     - target: {fileID: 842008244978331280, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
       propertyPath: disabledGameobjects.Array.size

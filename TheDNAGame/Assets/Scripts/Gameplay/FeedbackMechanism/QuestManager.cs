@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using GameEssentials.GameManager;
 
 public class QuestManager : MonoBehaviour
 {
+    // 2nd minigame
+    public int levelId = 1;
+
     public GameObject gameWinLose;
     public GaugeMeter meter;
 
@@ -80,6 +84,11 @@ public class QuestManager : MonoBehaviour
         if (currentTime <= 0f)
         {
             //Lose
+            if (score > 0)
+            {
+                GameManager.Instance.isLevelComplete[levelId] = true;
+            }
+
             gameWinLose.SetActive(true);
             //Debug.Log("Timer Ran out!");
         }
@@ -101,6 +110,10 @@ public class QuestManager : MonoBehaviour
         {
             if (currentQuest == 2)
             {
+                if (score > 0)
+                {
+                    GameManager.Instance.isLevelComplete[levelId] = true;
+                }
                 gameWinLose.SetActive(true);
                 return;
             }
