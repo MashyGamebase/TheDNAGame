@@ -2,36 +2,54 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum CardType
-{
-    Answer,
-    Description
-}
-
 public class CardBehaviour : MonoBehaviour
 {
-    private Animator animator;
+    [SerializeField] private float lerpSpeed;
 
-    public Type type;
-
-    public int ansID;
-    public int descID;
-
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
-
+    public int matchID;
 
     public void OnMouseDown()
     {
-        animator.SetTrigger("flipTrigger");
-        Invoke("Flip", 0.25f);
+        if (CardHolder.instance.CheckMatching())
+        {
+            StartCoroutine(FlipObject());
+            CardHolder.instance.SetCard(this);
+        }
     }
 
-    void Flip()
+    public void FlipBack()
     {
-        if(transform.rotation == Quaternion.Euler(0, 0, 180))
+        StartCoroutine(FlipObject());
+    }
+
+
+    IEnumerator FlipObject()
+    {
+        float timeElapsed = 0f;
+
+        Vector3 bobUp = new Vector3(transform.position.x, 2, transform.position.z);
+        Vector3 bobDown = new Vector3(transform.position.x, 1, transform.position.z);
+
+        while(timeElapsed < 1f)
+        {
+            timeElapsed += Time.deltaTime * lerpSpeed;
+            transform.position = Vector3.Lerp(bobDown, bobUp, timeElapsed);
+            yield return null;
+        }
+
+        //yield return new WaitForSeconds(0.1f);
+
+        timeElapsed = 0f;
+
+        while (timeElapsed < 1f)
+        {
+            timeElapsed += Time.deltaTime * lerpSpeed;
+            transform.position = Vector3.Lerp(bobUp, bobDown, timeElapsed);
+            yield return null;
+        }
+
+
+        if (transform.rotation == Quaternion.Euler(0, 0, 180))
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
