@@ -940,6 +940,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c758334e13f4cb94bbb04471bd0fea7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  headerText: {fileID: 5438274995317925976}
+  score: 0
   gameObjectsToDisable: []
   scoreText: {fileID: 5438274997106054628}
   gameScore: {fileID: 0}

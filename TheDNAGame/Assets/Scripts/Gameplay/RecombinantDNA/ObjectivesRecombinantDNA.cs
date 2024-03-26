@@ -147,6 +147,12 @@ public class ObjectivesRecombinantDNA : MonoBehaviour
                     questionsText.text = questions[currentQuestion];
                     Instantiate(rightPrefab, position.position, Quaternion.identity);
                     score += 10;
+                    if (score > 0)
+                    {
+                        GameManager.Instance.isLevelComplete[levelId] = true;
+                    }
+                    gameWinLose.gameObject.GetComponent<GameWinLose>().score = score;
+                    gameWinLose.SetActive(true);
                 }
                 else if (answer == "Bomb")
                 {
@@ -181,11 +187,6 @@ public class ObjectivesRecombinantDNA : MonoBehaviour
         if(currentTime <= 0f)
         {
             //Lose
-
-            if(score > 0)
-            {
-                GameManager.Instance.isLevelComplete[levelId] = true;
-            }
 
             gameWinLose.SetActive(true);
             //Debug.Log("Timer Ran out!");

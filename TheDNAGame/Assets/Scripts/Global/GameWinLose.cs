@@ -1,10 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using GameEssentials.GameManager;
 
 public class GameWinLose : MonoBehaviour
 {
     public static GameWinLose Instance;
+
+    public TextMeshProUGUI headerText;
+
+    public int score;
 
     public GameObject[] gameObjectsToDisable;
 
@@ -29,6 +34,9 @@ public class GameWinLose : MonoBehaviour
             go.SetActive(false);
         }
 
+        if (score > 0) headerText.text = "You did Great!";
+        else if (score <= 0) headerText.text = "Try Again...";
+
         scoreText.text = gameScore.text;
 
         Time.timeScale = 0.0f;
@@ -43,6 +51,8 @@ public class GameWinLose : MonoBehaviour
 
     public void OnClick_MainMenuButton()
     {
+        GameManager.Instance.SaveData();
+
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(0);
     }

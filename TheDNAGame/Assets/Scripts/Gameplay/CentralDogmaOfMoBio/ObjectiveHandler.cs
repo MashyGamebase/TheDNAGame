@@ -63,6 +63,13 @@ public class ObjectiveHandler : MonoBehaviour
         
         if(matchCount == 16)
         {
+            if (score > 0)
+            {
+                GameManager.Instance.isLevelComplete[levelId] = true;
+            }
+
+            gameWinLose.gameObject.GetComponent<GameWinLose>().score = score;
+
             gameWinLose.SetActive(true);
         }
     }
@@ -114,7 +121,7 @@ public class ObjectiveHandler : MonoBehaviour
             //Lose
             if (score > 0)
             {
-                GameManager.Instance.isLevelComplete[levelId] = true;
+                gameWinLose.gameObject.GetComponent<GameWinLose>().score = score;
             }
 
             gameWinLose.SetActive(true);

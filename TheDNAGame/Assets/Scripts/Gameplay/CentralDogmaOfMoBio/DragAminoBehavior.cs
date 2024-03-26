@@ -109,7 +109,8 @@ public class DragAminoBehavior : MonoBehaviour
                 }
                 else
                 {
-                    ObjectiveHandler.instance.score -= 5;
+                    if (ObjectiveHandler.instance.score <= 0) ObjectiveHandler.instance.score = 0;
+                    else ObjectiveHandler.instance.score -= 5;
                     transform.GetComponent<Collider>().enabled = true;
                     rb.isKinematic = false;
                 }

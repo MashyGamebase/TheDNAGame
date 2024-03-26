@@ -61,6 +61,15 @@ namespace GameEssentials.GameManager
             }
             PlayerPrefs.Save();
         }
+
+        public void SaveData()
+        {
+            for (int i = 0; i < isLevelComplete.Length; i++)
+            {
+                PlayerPrefs.SetInt("LevelComplete" + i, isLevelComplete[i] == true ? 1 : 0);
+            }
+            PlayerPrefs.Save();
+        }
     }
 }
 

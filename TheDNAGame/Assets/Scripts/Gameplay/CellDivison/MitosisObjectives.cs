@@ -45,6 +45,8 @@ public class MitosisObjectives : MonoBehaviour
                 GameManager.Instance.isLevelComplete[levelId] = true;
             }
 
+            gameWinLose.gameObject.GetComponent<GameWinLose>().score = score;
+
             gameWinLose.SetActive(true);
         }
     }

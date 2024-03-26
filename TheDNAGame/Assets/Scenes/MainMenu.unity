@@ -3844,6 +3844,18 @@ MonoBehaviour:
     textObject: {fileID: 376958569}
     splashImage: {fileID: 966320723}
     lockImage: {fileID: 1109887645}
+  - button: {fileID: 1098942793}
+    textObject: {fileID: 1649466965}
+    splashImage: {fileID: 386661390}
+    lockImage: {fileID: 1907449128}
+  - button: {fileID: 1678403836}
+    textObject: {fileID: 1952799534}
+    splashImage: {fileID: 1241900945}
+    lockImage: {fileID: 867690642}
+  - button: {fileID: 1201485716}
+    textObject: {fileID: 1343418616}
+    splashImage: {fileID: 1501361235}
+    lockImage: {fileID: 1519769962}
 --- !u!1001 &804022970
 PrefabInstance:
   m_ObjectHideFlags: 0
