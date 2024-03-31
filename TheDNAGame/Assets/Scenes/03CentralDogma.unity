@@ -4819,6 +4819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3315fe729b15e8247817860efa23c112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelId: 2
   gameWinLose: {fileID: 1404753202}
   polypeptideCubes: {fileID: 602590629}
   polypetideStrands:
@@ -5689,6 +5690,22 @@ PrefabInstance:
     - target: {fileID: 842008244978331287, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
       propertyPath: m_Name
       value: GameStarterCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 842008245031518408, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4130ac09a7308bb4f9ca704842b58cdf, type: 2}
+    - target: {fileID: 842008245031518408, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 842008245031518408, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4536564023670059094, guid: 4130ac09a7308bb4f9ca704842b58cdf, type: 2}
+    - target: {fileID: 842008245031518408, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
