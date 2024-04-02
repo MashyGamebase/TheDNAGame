@@ -344,6 +344,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameStarterCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 842008244978331287, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1150,6 +1154,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c5b7391967d5be4488fd71eca4867163, type: 3}
   m_PrefabInstance: {fileID: 680153751}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &733405456 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2694896035625981523, guid: 61784ed77a5522041889b291f26558e0, type: 3}
+  m_PrefabInstance: {fileID: 1315283914}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &735925197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1333,7 +1348,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -147.21063, y: -92}
+  m_AnchoredPosition: {x: -147.21063, y: -201}
   m_SizeDelta: {x: 256.4213, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &802696076
@@ -2076,11 +2091,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2694896035625982381, guid: 61784ed77a5522041889b291f26558e0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2694896036087584475, guid: 61784ed77a5522041889b291f26558e0, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694896036175362241, guid: 61784ed77a5522041889b291f26558e0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -312.00006
       objectReference: {fileID: 0}
     - target: {fileID: 2694896036719236270, guid: 61784ed77a5522041889b291f26558e0, type: 3}
       propertyPath: m_Name
@@ -3113,6 +3132,8 @@ MonoBehaviour:
   scoreText: {fileID: 1041389091}
   questText: {fileID: 1393371043}
   delayBetweenCharacters: 0.01
+  totalTime: 0
+  timerText: {fileID: 733405456}
 --- !u!1 &2048898529
 GameObject:
   m_ObjectHideFlags: 0
