@@ -4,5 +4,9 @@ public enum MitosisPhase
     Metaphase,
     Anaphase,
     Telophase,
-    Cytokinesis
+    Cytokinesis,
+    G1,
+    G2,
+    S,
+    None
 }

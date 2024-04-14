@@ -38,8 +38,6 @@ public class ObjectivesRecombinantDNA : MonoBehaviour
 
     public static ObjectivesRecombinantDNA Instance;
 
-    public GameObject rightPrefab, wrongPrefab;
-
     [Header("Timer Properties")]
     public float totalTime;
     private float currentTime;
@@ -79,8 +77,8 @@ public class ObjectivesRecombinantDNA : MonoBehaviour
                     // Correct answer
                     currentQuestion = 1;
                     questionsText.text = questions[currentQuestion];
-                    Instantiate(rightPrefab, position.position, Quaternion.identity);
                     score += 10;
+                    VAFeedback.Instance.RightAnswer(position);
                 }
                 else if(answer == "Bomb")
                 {
@@ -88,7 +86,7 @@ public class ObjectivesRecombinantDNA : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(wrongPrefab, position.position, Quaternion.identity);
+                    VAFeedback.Instance.WrongAnswer(position);
                     if (score <= 0)
                         score = 0;
                     else
@@ -101,8 +99,8 @@ public class ObjectivesRecombinantDNA : MonoBehaviour
                     // Correct answer
                     currentQuestion = 2;
                     questionsText.text = questions[currentQuestion];
-                    Instantiate(rightPrefab, position.position, Quaternion.identity);
                     score += 10;
+                    VAFeedback.Instance.RightAnswer(position);
                 }
                 else if (answer == "Bomb")
                 {
@@ -110,7 +108,7 @@ public class ObjectivesRecombinantDNA : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(wrongPrefab, position.position, Quaternion.identity);
+                    VAFeedback.Instance.WrongAnswer(position);
                     if (score <= 0)
                         score = 0;
                     else
@@ -123,8 +121,8 @@ public class ObjectivesRecombinantDNA : MonoBehaviour
                     // Correct answer
                     currentQuestion = 3;
                     questionsText.text = questions[currentQuestion];
-                    Instantiate(rightPrefab, position.position, Quaternion.identity);
                     score += 10;
+                    VAFeedback.Instance.RightAnswer(position);
                 }
                 else if (answer == "Bomb")
                 {
@@ -132,7 +130,7 @@ public class ObjectivesRecombinantDNA : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(wrongPrefab, position.position, Quaternion.identity);
+                    VAFeedback.Instance.WrongAnswer(position);
                     if (score <= 0)
                         score = 0;
                     else
@@ -145,13 +143,14 @@ public class ObjectivesRecombinantDNA : MonoBehaviour
                     // Correct answer
                     currentQuestion = 0;
                     questionsText.text = questions[currentQuestion];
-                    Instantiate(rightPrefab, position.position, Quaternion.identity);
                     score += 10;
+                    VAFeedback.Instance.RightAnswer(position);
                     if (score > 0)
                     {
                         GameManager.Instance.isLevelComplete[levelId] = true;
                     }
-                    gameWinLose.gameObject.GetComponent<GameWinLose>().score = score;
+                    gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
+                    gameWinLose.GetComponent<GameWinLose>().score = score;
                     gameWinLose.SetActive(true);
                 }
                 else if (answer == "Bomb")
@@ -160,7 +159,7 @@ public class ObjectivesRecombinantDNA : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(wrongPrefab, position.position, Quaternion.identity);
+                    VAFeedback.Instance.WrongAnswer(position);
                     if (score <= 0)
                         score = 0;
                     else
@@ -187,7 +186,8 @@ public class ObjectivesRecombinantDNA : MonoBehaviour
         if(currentTime <= 0f)
         {
             //Lose
-
+            gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
+            gameWinLose.GetComponent<GameWinLose>().score = score;
             gameWinLose.SetActive(true);
             //Debug.Log("Timer Ran out!");
         }

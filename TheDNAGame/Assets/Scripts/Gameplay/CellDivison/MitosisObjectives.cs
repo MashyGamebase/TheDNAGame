@@ -38,15 +38,15 @@ public class MitosisObjectives : MonoBehaviour
         CountdownTimer();
         ScoreCounter();
 
-        if (correctMatches >= 5 && !gameWinLose.activeInHierarchy)
+        if (correctMatches >= 8 && !gameWinLose.activeInHierarchy)
         {
             if (score > 0)
             {
                 GameManager.Instance.isLevelComplete[levelId] = true;
             }
 
-            gameWinLose.gameObject.GetComponent<GameWinLose>().score = score;
-
+            gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
+            gameWinLose.GetComponent<GameWinLose>().score = score;
             gameWinLose.SetActive(true);
         }
     }
@@ -71,11 +71,8 @@ public class MitosisObjectives : MonoBehaviour
         if (currentTime <= 0f)
         {
             //Lose
-            if (score > 0)
-            {
-                GameManager.Instance.isLevelComplete[levelId] = true;
-            }
-
+            gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
+            gameWinLose.GetComponent<GameWinLose>().score = score;
             gameWinLose.SetActive(true);
             //Debug.Log("Timer Ran out!");
         }

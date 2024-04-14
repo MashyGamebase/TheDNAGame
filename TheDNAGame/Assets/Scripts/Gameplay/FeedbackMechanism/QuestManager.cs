@@ -16,7 +16,8 @@ public class QuestManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
 
     public TextMeshProUGUI questText;
-    public int currentQuest;
+    public int completedQuest;
+    public int targetQuest;
     public string currentQuestText;
 
     public GameObject[] QuestHolder;
@@ -24,9 +25,10 @@ public class QuestManager : MonoBehaviour
     [TextArea(1,3)]
     public string[] questString =
     {
-        "You're body is heating up too quickly. Find a shade quickly so you don't overheat !\n A) Stand in the shade   B) Stand near the pool",
+        "You're body is heating up too quickly. Find a shade quickly so you don't overheat !",
         "You're in the heat quite a while, you're body is slowly getting thirsty",
-        "Don't go in that hot spring, the water may seem tempting but it got hot because of the sun!"
+        "Don't go in that hot spring, the water may seem tempting but it got hot because of the sun!",
+        ""
     };
 
     public float delayBetweenCharacters = 0.1f;
@@ -48,14 +50,14 @@ public class QuestManager : MonoBehaviour
     private void Start()
     {
         questText.text = "";
-        currentQuest = 0;
+        completedQuest = 0;
 
         // Account for game load so it starts exactly where you set it
         totalTime += 1;
         currentTime = totalTime;
 
-        currentQuestText = questString[currentQuest];
-        StartCoroutine(ShowText(questString[currentQuest]));
+        currentQuestText = questString[completedQuest];
+        StartCoroutine(ShowText(questString[completedQuest]));
     }
 
     private void OnEnable()
@@ -84,11 +86,8 @@ public class QuestManager : MonoBehaviour
         if (currentTime <= 0f)
         {
             //Lose
-            if (score > 0)
-            {
-                GameManager.Instance.isLevelComplete[levelId] = true;
-            }
-
+            gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
+            gameWinLose.GetComponent<GameWinLose>().score = score;
             gameWinLose.SetActive(true);
             //Debug.Log("Timer Ran out!");
         }
@@ -101,41 +100,61 @@ public class QuestManager : MonoBehaviour
 
     public void ResetQuest()
     {
-        currentQuest = 0;
+        completedQuest = 0;
     }
 
     public void ProceedQuest(int currentQuestNum)
     {
-        if(currentQuest == currentQuestNum)
+        if (completedQuest < targetQuest)
         {
-            if (currentQuest == 2)
+            if (currentQuestNum == 0) meter.RotateToCenter();
+            
+            currentQuestText = questString[currentQuestNum];
+            StartCoroutine(ShowText(currentQuestText));
+            completedQuest++;
+        }
+        else
+        {
+            gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
+            gameWinLose.GetComponent<GameWinLose>().score = score;
+            gameWinLose.SetActive(true);
+        }
+
+        /*
+        if(completedQuest == currentQuestNum)
+        {
+            if (completedQuest == 2)
             {
                 if (score > 0)
                 {
                     GameManager.Instance.isLevelComplete[levelId] = true;
                 }
+
+                gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
+                gameWinLose.GetComponent<GameWinLose>().score = score;
                 gameWinLose.SetActive(true);
                 return;
             }
 
-            if (currentQuest == 0) meter.RotateToCenter();
+            if (completedQuest == 0) meter.RotateToCenter();
 
             questText.text = "";
 
-            if (currentQuest < 2)
+            if (completedQuest < 2)
             {
-                QuestHolder[currentQuest].SetActive(false);
-                currentQuest += 1;
-                QuestHolder[currentQuest].SetActive(true);
+                QuestHolder[completedQuest].SetActive(false);
+                completedQuest += 1;
+                QuestHolder[completedQuest].SetActive(true);
             }
                 
             else
-                currentQuest = 0;
+                completedQuest = 0;
 
-            currentQuestText = questString[currentQuest];
+            currentQuestText = questString[completedQuest];
 
             StartCoroutine(ShowText(currentQuestText));
         }
+        */
     }
 
     public void UpdateScore(int scoreToAdd)
@@ -148,7 +167,9 @@ public class QuestManager : MonoBehaviour
 
     IEnumerator ShowText(string text)
     {
-        for(int i = 0; i < text.Length; i++)
+        questText.text = "";
+
+        for (int i = 0; i < text.Length; i++)
         {
             questText.text += text[i];
             yield return new WaitForSeconds(delayBetweenCharacters);

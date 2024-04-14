@@ -104,6 +104,7 @@ public class DragAminoBehavior : MonoBehaviour
                 if (hitInfo.transform.gameObject.GetComponent<CodonMatch>().isMatch(nucleotide, polypeptide, this.gameObject))
                 {
                     ObjectiveHandler.instance.score += 10;
+                    VAFeedback.Instance.RightAnswer(hitInfo.transform);
                     transform.GetComponent<Collider>().enabled = false;
                     state = State.Static;
                 }
@@ -111,6 +112,7 @@ public class DragAminoBehavior : MonoBehaviour
                 {
                     if (ObjectiveHandler.instance.score <= 0) ObjectiveHandler.instance.score = 0;
                     else ObjectiveHandler.instance.score -= 5;
+                    VAFeedback.Instance.WrongAnswer(hitInfo.transform);
                     transform.GetComponent<Collider>().enabled = true;
                     rb.isKinematic = false;
                 }

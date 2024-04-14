@@ -34,9 +34,11 @@ public class DragCellBehavior : MonoBehaviour
                 if (hitInfo.transform.gameObject.GetComponent<PhaseMatch>().IsPhaseMatch(phase))
                 {
                     transform.position = hitInfo.transform.position;
+                    transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
                     transform.GetComponent<Collider>().enabled = false;
                     MitosisObjectives.instance.correctMatches += 1;
                     MitosisObjectives.instance.score += 20;
+                    VAFeedback.Instance.RightAnswer(hitInfo.transform);
                 }
                 else
                 {
@@ -44,6 +46,8 @@ public class DragCellBehavior : MonoBehaviour
                         MitosisObjectives.instance.score = 0;
                     else
                         MitosisObjectives.instance.score -= 15;
+
+                    VAFeedback.Instance.WrongAnswer(hitInfo.transform);
 
                     transform.position = startPosition.position;
                     transform.GetComponent<Collider>().enabled = true;

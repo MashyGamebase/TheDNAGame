@@ -9,11 +9,13 @@ public class CardBehaviour : MonoBehaviour
     public int matchID;
     public int cardNumber;
 
+    public bool canFlipThisCard = true;
+
     public void OnMouseDown()
     {
-        if (CardHolder.instance.CheckMatching())
+        if (CardHolder.instance.CheckMatching() && canFlipThisCard)
         {
-            StartCoroutine(FlipObject());
+            StartCoroutine(FlipCard());
             CardHolder.instance.SetCard(this);
         }
     }
@@ -23,7 +25,7 @@ public class CardBehaviour : MonoBehaviour
         StartCoroutine(FlipBackToInitial());
     }
 
-    IEnumerator FlipObject()
+    IEnumerator FlipCard()
     {
         float timeElapsed = 0f;
 
@@ -63,8 +65,20 @@ public class CardBehaviour : MonoBehaviour
     private IEnumerator FlipBackToInitial()
     {
         float timeElapsed = 0f;
+        Vector3 bobUp = new Vector3(transform.position.x, 2, transform.position.z);
+        Vector3 bobDown = new Vector3(transform.position.x, 1, transform.position.z);
+
         Quaternion startRotation = transform.rotation;
         Quaternion targetRotation = Quaternion.Euler(0, 0, 180); // or Quaternion.Euler(0, 0, 0) depending on your initial state
+
+        while (timeElapsed < 1f)
+        {
+            timeElapsed += Time.deltaTime * lerpSpeed;
+            transform.position = Vector3.Lerp(bobDown, bobUp, timeElapsed);
+            yield return null;
+        }
+
+        timeElapsed = 0f;
 
         while (timeElapsed < 1f)
         {
@@ -73,7 +87,17 @@ public class CardBehaviour : MonoBehaviour
             yield return null;
         }
 
+        timeElapsed = 0f;
+
+        while (timeElapsed < 1f)
+        {
+            timeElapsed += Time.deltaTime * lerpSpeed;
+            transform.position = Vector3.Lerp(bobUp, bobDown, timeElapsed);
+            yield return null;
+        }
+
         // Ensure the rotation is exactly the target rotation
         transform.rotation = targetRotation;
+        canFlipThisCard = true;
     }
 }

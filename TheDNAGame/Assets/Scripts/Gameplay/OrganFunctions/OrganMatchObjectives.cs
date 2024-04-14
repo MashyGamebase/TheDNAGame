@@ -76,11 +76,8 @@ public class OrganMatchObjectives : MonoBehaviour
         if (currentTime <= 0f)
         {
             //Lose
-            if (score > 0)
-            {
-                GameManager.Instance.isLevelComplete[levelId] = true;
-            }
-
+            gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
+            gameWinLose.GetComponent<GameWinLose>().score = score;
             gameWinLose.SetActive(true);
             //Debug.Log("Timer Ran out!");
         }
@@ -112,7 +109,8 @@ public class OrganMatchObjectives : MonoBehaviour
             {
                 GameManager.Instance.isLevelComplete[levelId] = true;
             }
-
+            gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
+            gameWinLose.GetComponent<GameWinLose>().score = score;
             gameWinLose.SetActive(true);
         }
     }

@@ -740,7 +740,7 @@ PrefabInstance:
     - target: {fileID: 842008245826047647, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0118a9356bf226245a96caef9b48af74, type: 3}
+      objectReference: {fileID: 21300000, guid: 5902b5be61a85bf4ab6864dd1a60bd93, type: 3}
     - target: {fileID: 842008246282503588, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
       propertyPath: m_Type
       value: 0
@@ -756,7 +756,7 @@ PrefabInstance:
     - target: {fileID: 842008246498914913, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0118a9356bf226245a96caef9b48af74, type: 3}
+      objectReference: {fileID: 21300000, guid: 5902b5be61a85bf4ab6864dd1a60bd93, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -858,6 +858,10 @@ PrefabInstance:
       propertyPath: gameScore
       value: 
       objectReference: {fileID: 1382274708}
+    - target: {fileID: 5438274997178390501, guid: bae8bc8527badee478b798f8c83870f3, type: 3}
+      propertyPath: minigameID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5438274997178390501, guid: bae8bc8527badee478b798f8c83870f3, type: 3}
       propertyPath: gameObjectsToDisable.Array.size
       value: 7
@@ -1326,8 +1330,6 @@ MonoBehaviour:
   - What's the final stage, involving amplifying the gene and identifying successful
     cells?
   questionsText: {fileID: 1946587348}
-  rightPrefab: {fileID: 7074776743963042094, guid: 82ae4e04159cb4d4b960bc0443cd4c9a, type: 3}
-  wrongPrefab: {fileID: 3054194762375010264, guid: 3cea55dea6aeba14da7239c698fdb213, type: 3}
   totalTime: 120
   timerText: {fileID: 1923921921}
 --- !u!4 &1461079190 stripped
@@ -1546,6 +1548,7 @@ GameObject:
   - component: {fileID: 1954329010}
   - component: {fileID: 1954329013}
   - component: {fileID: 1954329014}
+  - component: {fileID: 1954329015}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1644,13 +1647,13 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -1683,6 +1686,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21537e5d262c743a28752af3d87de410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1954329015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954329009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 79652aa60ef36264bbb0034fa00a14f6, type: 2}
 --- !u!1 &1960118348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,6 +1879,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4081191978709396, guid: 5fe0f9fa4e1864d81a1e48a76ad904b0, type: 3}
   m_PrefabInstance: {fileID: 2116091614}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2506310989256451254
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2609921209041399998, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_Name
+      value: VAFeedback
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
 --- !u!1001 &2694896037481737810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2693,3 +2770,4 @@ SceneRoots:
   - {fileID: 1599987460}
   - {fileID: 453632632}
   - {fileID: 857722338}
+  - {fileID: 2506310989256451254}

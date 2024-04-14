@@ -876,6 +876,7 @@ MonoBehaviour:
   lerpSpeed: 5
   matchID: 0
   cardNumber: 4
+  canFlipThisCard: 1
 --- !u!65 &448166702
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -959,6 +960,7 @@ GameObject:
   - component: {fileID: 498502071}
   - component: {fileID: 498502070}
   - component: {fileID: 498502073}
+  - component: {fileID: 498502074}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1057,13 +1059,13 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -1084,6 +1086,23 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &498502074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498502069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 79652aa60ef36264bbb0034fa00a14f6, type: 2}
 --- !u!1001 &575890995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1414,6 +1433,7 @@ MonoBehaviour:
   lerpSpeed: 5
   matchID: 0
   cardNumber: 1
+  canFlipThisCard: 1
 --- !u!1 &733936115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,6 +1844,7 @@ MonoBehaviour:
   lerpSpeed: 5
   matchID: 0
   cardNumber: 2
+  canFlipThisCard: 1
 --- !u!65 &817754070
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2897,6 +2918,7 @@ MonoBehaviour:
   - {fileID: 1580995879}
   - {fileID: 2084330615}
   matchesMade: 0
+  canFlipCard: 1
   score: 0
   scoreText: {fileID: 1400265709}
   totalTime: 120
@@ -2952,6 +2974,7 @@ MonoBehaviour:
   lerpSpeed: 5
   matchID: 0
   cardNumber: 5
+  canFlipThisCard: 1
 --- !u!65 &1300499580
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3576,6 +3599,7 @@ MonoBehaviour:
   lerpSpeed: 5
   matchID: 0
   cardNumber: 3
+  canFlipThisCard: 1
 --- !u!65 &1460462997
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3698,6 +3722,7 @@ MonoBehaviour:
   lerpSpeed: 5
   matchID: 0
   cardNumber: 7
+  canFlipThisCard: 1
 --- !u!65 &1580995883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3844,6 +3869,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600863326}
   m_CullTransparentMesh: 1
+--- !u!1001 &1690168438
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280078217720388633, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2609921209041399998, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
+      propertyPath: m_Name
+      value: VAFeedback
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 23bd8a3f985eb734b9828824ba5d60b2, type: 3}
 --- !u!1 &1732593243
 GameObject:
   m_ObjectHideFlags: 0
@@ -4178,6 +4260,7 @@ MonoBehaviour:
   lerpSpeed: 5
   matchID: 0
   cardNumber: 6
+  canFlipThisCard: 1
 --- !u!65 &1816973824
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4787,6 +4870,7 @@ MonoBehaviour:
   lerpSpeed: 5
   matchID: 0
   cardNumber: 8
+  canFlipThisCard: 1
 --- !u!65 &2084330619
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4974,3 +5058,4 @@ SceneRoots:
   - {fileID: 2000097181}
   - {fileID: 824911766}
   - {fileID: 1857628549}
+  - {fileID: 1690168438}

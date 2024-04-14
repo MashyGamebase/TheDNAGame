@@ -11,6 +11,7 @@ public enum QuestionIdentifier
 public class QuestTrigger : MonoBehaviour
 {
     public int questTrigger;
+    public GameObject popup;
     public int score;
     public QuestionIdentifier identifier;
 
@@ -18,15 +19,23 @@ public class QuestTrigger : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            if (QuestManager.Instance.currentQuest == questTrigger && identifier == QuestionIdentifier.Right)
+            if (identifier == QuestionIdentifier.Right)
             {
+                if(questTrigger == 1 || questTrigger == 2)
+                {
+                    popup?.SetActive(true);
+                }
+
                 QuestManager.Instance.ProceedQuest(questTrigger);
                 QuestManager.Instance.UpdateScore(score);
                 Destroy(this.gameObject);
+
+                VAFeedback.Instance.RightAnswer(this.transform);
             }
             else if(identifier == QuestionIdentifier.Wrong)
             {
                 QuestManager.Instance.UpdateScore(-score);
+                VAFeedback.Instance.WrongAnswer(this.transform);
                 Destroy(this.gameObject);
             }
         }

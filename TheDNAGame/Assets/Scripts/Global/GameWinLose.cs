@@ -1,20 +1,27 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using GameEssentials.GameManager;
 
 public class GameWinLose : MonoBehaviour
 {
+    public int minigameID;
+
     public static GameWinLose Instance;
 
     public TextMeshProUGUI headerText;
 
     public int score;
+    public float timeLeft;
 
     public GameObject[] gameObjectsToDisable;
 
+    public Image badgeImage;
+    public Sprite[] badgeSprites;
+
+
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI gameScore;
 
     private void Awake()
     {
@@ -34,10 +41,19 @@ public class GameWinLose : MonoBehaviour
             go.SetActive(false);
         }
 
-        if (score > 0) headerText.text = "You did Great!";
-        else if (score <= 0) headerText.text = "Try Again...";
+        if (score > 0 && timeLeft > 0)
+        {
+            badgeImage.gameObject.SetActive(true);
+            badgeImage.sprite = badgeSprites[minigameID];
+            headerText.text = "VICTORY!";
+        }
+        else if (score <= 0 || timeLeft <= 0)
+        {
+            headerText.text = "TRY AGAIN";
+            badgeImage.sprite = badgeSprites[9];
+        }
 
-        scoreText.text = gameScore.text;
+        scoreText.text = score.ToString("D4");
 
         Time.timeScale = 0.0f;
     }

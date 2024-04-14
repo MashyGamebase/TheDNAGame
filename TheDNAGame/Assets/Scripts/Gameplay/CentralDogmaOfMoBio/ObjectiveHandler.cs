@@ -68,8 +68,8 @@ public class ObjectiveHandler : MonoBehaviour
                 GameManager.Instance.isLevelComplete[levelId] = true;
             }
 
-            gameWinLose.gameObject.GetComponent<GameWinLose>().score = score;
-
+            gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
+            gameWinLose.GetComponent<GameWinLose>().score = score;
             gameWinLose.SetActive(true);
         }
     }
@@ -119,11 +119,8 @@ public class ObjectiveHandler : MonoBehaviour
         if (currentTime <= 0f)
         {
             //Lose
-            if (score > 0)
-            {
-                gameWinLose.gameObject.GetComponent<GameWinLose>().score = score;
-            }
-
+            gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
+            gameWinLose.GetComponent<GameWinLose>().score = score;
             gameWinLose.SetActive(true);
             //Debug.Log("Timer Ran out!");
         }

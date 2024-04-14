@@ -26,6 +26,8 @@ public class CardHolder : MonoBehaviour
 
     [SerializeField] private int matchesMade = 0;
 
+    [HideInInspector] public bool canFlipCard = true;
+
     public int score;
     public TextMeshProUGUI scoreText;
 
@@ -36,14 +38,7 @@ public class CardHolder : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
-    }
-
-    private void OnEnable()
-    {
-        if (instance == null)
-            instance = this;
+        instance = this;
     }
 
     private void Start()
@@ -119,12 +114,19 @@ public class CardHolder : MonoBehaviour
 
     public void SetCard(CardBehaviour card)
     {
-        if (firstCard == null)
-            firstCard = card;
-        else if (secondCard == null)
+        if (canFlipCard)
         {
-            secondCard = card;
-            StartCoroutine(CheckMatch(firstCard, secondCard));
+            if (firstCard == null)
+            {
+                firstCard = card;
+                firstCard.canFlipThisCard = false;
+            }
+            else if (secondCard == null)
+            {
+                secondCard = card;
+                secondCard.canFlipThisCard = false;
+                StartCoroutine(CheckMatch(firstCard, secondCard));
+            }
         }
     }
 
@@ -147,10 +149,13 @@ public class CardHolder : MonoBehaviour
 
                 yield return new WaitForSeconds(0.3f);
 
+                VAFeedback.Instance.RightAnswer(card1.transform);
+
                 Destroy(card1.gameObject);
                 Destroy(card2.gameObject);
 
                 score += 250;
+                
 
                 matchesMade += 1;
 
@@ -167,6 +172,8 @@ public class CardHolder : MonoBehaviour
             {
                 if (score <= 0) score = 0;
                 else score -= 50;
+
+                VAFeedback.Instance.WrongAnswer(card2.transform);
 
                 card1.FlipBack();
                 card2.FlipBack();
@@ -206,12 +213,9 @@ public class CardHolder : MonoBehaviour
 
         if (currentTime <= 0f)
         {
-            //Lose
-            if (score > 0)
-            {
-                gameWinLose.gameObject.GetComponent<GameWinLose>().score = score;
-            }
-
+            //Lose regardless of score
+            gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
+            gameWinLose.GetComponent<GameWinLose>().score = score;
             gameWinLose.SetActive(true);
             //Debug.Log("Timer Ran out!");
         }
