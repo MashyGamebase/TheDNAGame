@@ -21,11 +21,6 @@ public class QuestTrigger : MonoBehaviour
         {
             if (identifier == QuestionIdentifier.Right)
             {
-                if(questTrigger == 1 || questTrigger == 2)
-                {
-                    popup?.SetActive(true);
-                }
-
                 QuestManager.Instance.ProceedQuest(questTrigger);
                 QuestManager.Instance.UpdateScore(score);
                 Destroy(this.gameObject);
@@ -36,7 +31,7 @@ public class QuestTrigger : MonoBehaviour
             {
                 QuestManager.Instance.UpdateScore(-score);
                 VAFeedback.Instance.WrongAnswer(this.transform);
-                Destroy(this.gameObject);
+                if(questTrigger != 2) Destroy(this.gameObject);
             }
         }
     }

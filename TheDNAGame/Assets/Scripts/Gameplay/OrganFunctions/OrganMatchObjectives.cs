@@ -25,7 +25,11 @@ public class OrganMatchObjectives : MonoBehaviour
     public int score;
     public TextMeshProUGUI scoreText;
 
-    public TextMeshProUGUI questText;
+    public GameObject popupriddleUI;
+    public TextMeshProUGUI popupUIText;
+    [TextArea(3, 15)]
+    public string[] riddleText;
+
     public float delayBetweenCharacters;
 
     [Header("Timer Properties")]
@@ -54,6 +58,13 @@ public class OrganMatchObjectives : MonoBehaviour
     void UpdateMatches()
     {
         matchesText.text = matches + "/7";
+
+        if (matches >= 7)
+        {
+            gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
+            gameWinLose.GetComponent<GameWinLose>().score = score;
+            gameWinLose.SetActive(true);
+        }
     }
 
     void UpdateScore()
@@ -88,30 +99,13 @@ public class OrganMatchObjectives : MonoBehaviour
         matches += _matches;
     }
 
-    public void AddText(string text)
+    public void ShowRiddle(int index)
     {
-        StartCoroutine(ShowText(text));
-    }
-
-    IEnumerator ShowText(string text)
-    {
-        questText.text = "";
-
-        for (int i = 0; i < text.Length; i++)
+        if (matches < 7)
         {
-            questText.text += text[i];
-            yield return new WaitForSeconds(delayBetweenCharacters);
-        }
-
-        if (matches >= 7)
-        {
-            if (score > 0)
-            {
-                GameManager.Instance.isLevelComplete[levelId] = true;
-            }
-            gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
-            gameWinLose.GetComponent<GameWinLose>().score = score;
-            gameWinLose.SetActive(true);
+            popupUIText.text = "";
+            popupriddleUI.SetActive(true);
+            popupUIText.text = riddleText[index];
         }
     }
 }

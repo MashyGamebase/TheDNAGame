@@ -69,6 +69,14 @@ public class QuestManager : MonoBehaviour
     {
         CountdownTimer();
         ScoreCounter();
+
+        if (completedQuest >= targetQuest)
+        {
+            gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
+            gameWinLose.GetComponent<GameWinLose>().score = score;
+            targetQuest = 4;
+            gameWinLose.SetActive(true);
+        }
     }
 
     void CountdownTimer()
@@ -103,6 +111,7 @@ public class QuestManager : MonoBehaviour
         completedQuest = 0;
     }
 
+
     public void ProceedQuest(int currentQuestNum)
     {
         if (completedQuest < targetQuest)
@@ -112,12 +121,6 @@ public class QuestManager : MonoBehaviour
             currentQuestText = questString[currentQuestNum];
             StartCoroutine(ShowText(currentQuestText));
             completedQuest++;
-        }
-        else
-        {
-            gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
-            gameWinLose.GetComponent<GameWinLose>().score = score;
-            gameWinLose.SetActive(true);
         }
 
         /*

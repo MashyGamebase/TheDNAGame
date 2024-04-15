@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
+using System;
 
 public enum Organ
 {
@@ -16,6 +18,9 @@ public class DragMatchOrgans : MonoBehaviour
     private LineRenderer lineRenderer;
     private bool isDrawing = false;
     public string destinationTag = "MatchPoint";
+
+    public GameObject popupUI;
+    public TextMeshProUGUI popupText;
 
     public Organ organ;
 
@@ -82,7 +87,9 @@ public class DragMatchOrgans : MonoBehaviour
                                     OrganMatchObjectives.instance.AddMatches(1);
                                     OrganMatchObjectives.instance.score += 10;
                                     VAFeedback.Instance.RightAnswer(hitInfo.transform);
-                                    OrganMatchObjectives.instance.AddText(descriptionText[0]);
+                                    ShowPopup(0, "Heart", "Lung");
+                                    //OrganMatchObjectives.instance.AddText(descriptionText[0]);
+                                    OrganMatchObjectives.instance.ShowRiddle(3);
                                 }
                                 else
                                 {
@@ -98,7 +105,9 @@ public class DragMatchOrgans : MonoBehaviour
                                     OrganMatchObjectives.instance.AddMatches(1);
                                     OrganMatchObjectives.instance.score += 10;
                                     VAFeedback.Instance.RightAnswer(hitInfo.transform);
-                                    OrganMatchObjectives.instance.AddText(descriptionText[2]);
+                                    ShowPopup(2, "Heart", "Kidney");
+                                    OrganMatchObjectives.instance.ShowRiddle(6);
+                                    //OrganMatchObjectives.instance.AddText(descriptionText[2]);
                                 }
                                 else
                                 {
@@ -114,7 +123,9 @@ public class DragMatchOrgans : MonoBehaviour
                                     OrganMatchObjectives.instance.AddMatches(1);
                                     OrganMatchObjectives.instance.score += 10;
                                     VAFeedback.Instance.RightAnswer(hitInfo.transform);
-                                    OrganMatchObjectives.instance.AddText(descriptionText[1]);
+                                    ShowPopup(1, "Heart", "Liver");
+                                    OrganMatchObjectives.instance.ShowRiddle(4);
+                                    //OrganMatchObjectives.instance.AddText(descriptionText[1]);
                                 }
                                 else
                                 {
@@ -134,7 +145,9 @@ public class DragMatchOrgans : MonoBehaviour
                                 OrganMatchObjectives.instance.AddMatches(1);
                                 OrganMatchObjectives.instance.score += 10;
                                 VAFeedback.Instance.RightAnswer(hitInfo.transform);
-                                OrganMatchObjectives.instance.AddText(descriptionText[0]);
+                                ShowPopup(0, "Lung", "Heart");
+                                OrganMatchObjectives.instance.ShowRiddle(0);
+                                //OrganMatchObjectives.instance.AddText(descriptionText[0]);
                             }
                             else
                             {
@@ -159,7 +172,9 @@ public class DragMatchOrgans : MonoBehaviour
                                 OrganMatchObjectives.instance.AddMatches(1);
                                 OrganMatchObjectives.instance.score += 10;
                                 VAFeedback.Instance.RightAnswer(hitInfo.transform);
-                                OrganMatchObjectives.instance.AddText(descriptionText[0]);
+                                ShowPopup(0, "Kidney", "Heart");
+                                OrganMatchObjectives.instance.ShowRiddle(1);
+                                //OrganMatchObjectives.instance.AddText(descriptionText[0]);
                             }
                             else
                             {
@@ -185,7 +200,9 @@ public class DragMatchOrgans : MonoBehaviour
                                     OrganMatchObjectives.instance.AddMatches(1);
                                     OrganMatchObjectives.instance.score += 10;
                                     VAFeedback.Instance.RightAnswer(hitInfo.transform);
-                                    OrganMatchObjectives.instance.AddText(descriptionText[0]);
+                                    ShowPopup(0, "Liver", "Heart");
+                                    OrganMatchObjectives.instance.ShowRiddle(5);
+                                    //OrganMatchObjectives.instance.AddText(descriptionText[0]);
                                 }
                                 else
                                 {
@@ -201,7 +218,9 @@ public class DragMatchOrgans : MonoBehaviour
                                     OrganMatchObjectives.instance.AddMatches(1);
                                     OrganMatchObjectives.instance.score += 10;
                                     VAFeedback.Instance.RightAnswer(hitInfo.transform);
-                                    OrganMatchObjectives.instance.AddText(descriptionText[1]);
+                                    ShowPopup(1, "Liver", "Kidney");
+                                    OrganMatchObjectives.instance.ShowRiddle(2);
+                                    //OrganMatchObjectives.instance.AddText(descriptionText[1]);
                                 }
                                 else
                                 {
@@ -222,6 +241,19 @@ public class DragMatchOrgans : MonoBehaviour
             lineRenderer.enabled = false;
             isDrawing = false;
         }
-        
+    }
+
+
+    void ShowPopup(int index, string organ1, string organ2)
+    {
+        StartCoroutine(showPopupCo(index, organ1, organ2));
+    }
+
+    IEnumerator showPopupCo(int index, string organ1, string organ2)
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        popupUI.SetActive(true);
+        popupText.text = "Explanation\n" + $"{organ1} -> {organ2}\n\n" + descriptionText[index];
     }
 }

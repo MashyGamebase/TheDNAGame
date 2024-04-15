@@ -595,7 +595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &189252127
 Transform:
   m_ObjectHideFlags: 0
@@ -1465,6 +1465,7 @@ Transform:
   m_Children:
   - {fileID: 550764839}
   - {fileID: 1554797158}
+  - {fileID: 1466356047}
   - {fileID: 966154677}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2684,11 +2685,10 @@ Transform:
   m_GameObject: {fileID: 966154676}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.561, y: 1.41, z: -1.496}
+  m_LocalPosition: {x: -2.561, y: 2.3, z: -1.496}
   m_LocalScale: {x: 2.3977356, y: 2.3977356, z: 2.3977356}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1466356047}
   - {fileID: 1376295487}
   m_Father: {fileID: 476381883}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2705,7 +2705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questTrigger: 2
-  popup: {fileID: 1376295486}
+  popup: {fileID: 0}
   score: 20
   identifier: 0
 --- !u!135 &966154679
@@ -2746,7 +2746,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &984020459
 Transform:
   m_ObjectHideFlags: 0
@@ -3773,12 +3773,12 @@ Transform:
   m_GameObject: {fileID: 1466356046}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9619908, y: -0.35450104, z: 0.549435}
-  m_LocalScale: {x: 0.39583173, y: 0.41706014, z: 0.3035593}
+  m_LocalPosition: {x: -0.2544005, y: 0.5600003, z: -0.17860031}
+  m_LocalScale: {x: 0.9490998, y: 1, z: 0.72785497}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1038401125}
-  m_Father: {fileID: 966154677}
+  m_Father: {fileID: 476381883}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1466356049
 BoxCollider:
@@ -3943,7 +3943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questTrigger: 1
-  popup: {fileID: 1829825713}
+  popup: {fileID: 0}
   score: 15
   identifier: 0
 --- !u!135 &1554797160
@@ -4902,7 +4902,7 @@ Transform:
   m_GameObject: {fileID: 2072683852}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.2, y: 1, z: -5}
+  m_LocalPosition: {x: 1.15, y: 1, z: -5.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

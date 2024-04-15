@@ -163,6 +163,7 @@ public class CardHolder : MonoBehaviour
                 {
                     GameManager.Instance.isLevelComplete[levelId] = true;
 
+                    gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
                     gameWinLose.gameObject.GetComponent<GameWinLose>().score = score;
 
                     gameWinLose.SetActive(true);

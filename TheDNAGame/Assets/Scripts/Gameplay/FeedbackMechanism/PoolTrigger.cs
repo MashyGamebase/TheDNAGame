@@ -15,13 +15,4 @@ public class PoolTrigger : MonoBehaviour
             QuestManager.Instance.UpdateScore(-score);
         }
     }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            other.transform.position = point.position;
-            //QuestManager.Instance.UpdateScore(-score);
-        }
-    }
 }

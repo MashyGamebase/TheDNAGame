@@ -47,9 +47,14 @@ public class GameWinLose : MonoBehaviour
             badgeImage.sprite = badgeSprites[minigameID];
             headerText.text = "VICTORY!";
         }
-        else if (score <= 0 || timeLeft <= 0)
+        else if (score <= 0)
         {
             headerText.text = "TRY AGAIN";
+            badgeImage.sprite = badgeSprites[9];
+        }
+        else if(timeLeft <= 0)
+        {
+            headerText.text = "TIME'S UP!";
             badgeImage.sprite = badgeSprites[9];
         }
 
