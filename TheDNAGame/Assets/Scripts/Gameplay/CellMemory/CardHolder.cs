@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class CardHolder : MonoBehaviour
@@ -16,6 +17,9 @@ public class CardHolder : MonoBehaviour
 
     public string[] cardAnswer;
     public string[] cardDesc;
+
+    public Sprite[] answerImages;
+    public Image[] answerImage;
 
     public CardBehaviour firstCard;
     public CardBehaviour secondCard;
@@ -58,6 +62,7 @@ public class CardHolder : MonoBehaviour
                 if (string.IsNullOrEmpty(cardText[j].text)) // Check if text is empty or null
                 {
                     cardText[j].text = cardAnswer[i];
+                    answerImage[j].sprite = answerImages[i];
                     cardText[j].gameObject.GetComponentInParent<CardBehaviour>().matchID = i;
                     textSet = true;
                     break; // Break out of the inner loop once text is set
