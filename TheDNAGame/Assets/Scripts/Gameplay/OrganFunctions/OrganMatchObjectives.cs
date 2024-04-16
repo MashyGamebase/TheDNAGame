@@ -1,4 +1,5 @@
 using GameEssentials.GameManager;
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -46,6 +47,7 @@ public class OrganMatchObjectives : MonoBehaviour
     private void Start()
     {
         currentTime = totalTime;
+        ShowRiddle(0);
     }
 
     private void Update()

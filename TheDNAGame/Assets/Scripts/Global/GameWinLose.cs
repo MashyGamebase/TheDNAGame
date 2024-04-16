@@ -10,6 +10,8 @@ public class GameWinLose : MonoBehaviour
 
     public static GameWinLose Instance;
 
+    public GameObject winButton, loseButton;
+
     public TextMeshProUGUI headerText;
 
     public int score;
@@ -46,16 +48,19 @@ public class GameWinLose : MonoBehaviour
             badgeImage.gameObject.SetActive(true);
             badgeImage.sprite = badgeSprites[minigameID];
             headerText.text = "VICTORY!";
+            winButton.SetActive(true);
         }
         else if (score <= 0)
         {
             headerText.text = "TRY AGAIN";
             badgeImage.sprite = badgeSprites[9];
+            loseButton.SetActive(true);
         }
         else if(timeLeft <= 0)
         {
             headerText.text = "TIME'S UP!";
             badgeImage.sprite = badgeSprites[9];
+            loseButton.SetActive(true);
         }
 
         scoreText.text = score.ToString("D4");
@@ -70,11 +75,23 @@ public class GameWinLose : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void OnClick_MainMenuButton()
+    public void OnClick_NextSceneButton()
     {
         GameManager.Instance.SaveData();
 
         Time.timeScale = 1.0f;
+
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 3:
+            case 5:
+            case 7:
+                SceneManager.LoadScene(0);
+                break;
+            default:
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                break;
+        }
         SceneManager.LoadScene(0);
     }
 }

@@ -238,7 +238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 842008244978331280, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
       propertyPath: disabledGameobjects.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 842008244978331280, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
       propertyPath: disabledGameobjects.Array.data[0]
@@ -260,6 +260,10 @@ PrefabInstance:
       propertyPath: disabledGameobjects.Array.data[4]
       value: 
       objectReference: {fileID: 1924099125}
+    - target: {fileID: 842008244978331280, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
+      propertyPath: disabledGameobjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 1944748917}
     - target: {fileID: 842008244978331283, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4621,7 +4625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1944748918
 Transform:
   m_ObjectHideFlags: 0
