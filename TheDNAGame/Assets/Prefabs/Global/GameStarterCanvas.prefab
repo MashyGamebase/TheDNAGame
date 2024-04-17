@@ -66,8 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f9f25bb6be8733f4894d60fe54097b1d, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 5902b5be61a85bf4ab6864dd1a60bd93, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -143,8 +143,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: QUIT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 84bf34a743a374c428c79e329d200592, type: 2}
-  m_sharedMaterial: {fileID: -8741128925397584353, guid: 84bf34a743a374c428c79e329d200592, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 78c833450a386a748b282ea4fa0e6f64, type: 2}
+  m_sharedMaterial: {fileID: -8276286203032908894, guid: 78c833450a386a748b282ea4fa0e6f64, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -408,13 +408,13 @@ MonoBehaviour:
   minigameDesc: {fileID: 842008245035533580}
   disabledGameobjects: []
   minigameTitles:
-  - Recombinant DNA
-  - Feedback Mechanism
-  - Centrol Dogma of Molecular Biology
-  - Cell Division
-  - Body Organ Functions
-  - Cell Memory
-  - Cell Structure
+  - How to Play?
+  - How to Play?
+  - How to Play?
+  - How to Play?
+  - How to Play?
+  - How to Play?
+  - How to Play?
   minigameInfo:
   - 'A classic Whack-a-Mole game, these moles have an answer in their heads that
     corresponds to the answer of the question.
@@ -439,13 +439,23 @@ MonoBehaviour:
   - -Blank-
   - -Blank-
   introductionText:
-  - 01 Recombinant DNA
-  - 02 FeedbackMechanism
-  - 03 Central Dogma
-  - 04 Cell Division
-  - 05 BodyOrganFunctions
-  - 06 CellMemory
-  - 07 Cell Structures
+  - 'Enter the world of genetic engineering with Recombinant DNA. Investigate on
+    the steps in Recombinant DNA Technology. '
+  - Learn how organisms keep internal balance through processes like temperature
+    control. This game teaches players how different body systems respond to changes
+    and maintain stability, known as homeostasis.
+  - Decode the Central Dogma of Molecular Biology. Investigate how genetic information
+    flows from DNA to RNA to proteins, essential for understanding how cells function.
+  - Embark on a journey through the Cell Cycle and uncover the secrets of cell division.
+    Investigate the phases of Interphase and Mitosis!
+  - 'Embark on a detective journey through the Animal Organ System, where organs
+    work together in harmony. Solve riddles to uncover the secrets of how each organ
+    plays a crucial role in the body''s functions. '
+  - Unlock the mysteries of life as you delve into the Cell Theory. Discover the
+    scientists who paved the way for this revolutionary concept.
+  - Put on your detective hat and explore the inner workings of cells. Investigate
+    the structures that keep cells functioning, from the powerhouse mitochondria
+    to the intricate endoplasmic reticulum.
   introText: {fileID: 3165087619179826187}
   introPanelScreen: {fileID: 6098857928520319601}
 --- !u!1 &842008245031518410
@@ -783,8 +793,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PLAY
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 84bf34a743a374c428c79e329d200592, type: 2}
-  m_sharedMaterial: {fileID: -8741128925397584353, guid: 84bf34a743a374c428c79e329d200592, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 78c833450a386a748b282ea4fa0e6f64, type: 2}
+  m_sharedMaterial: {fileID: -8276286203032908894, guid: 78c833450a386a748b282ea4fa0e6f64, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -917,7 +927,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5902b5be61a85bf4ab6864dd1a60bd93, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f342cff82659c2b4ba858f2467fdd88d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1130,7 +1140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5902b5be61a85bf4ab6864dd1a60bd93, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f342cff82659c2b4ba858f2467fdd88d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1261,7 +1271,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: X
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1397,8 +1407,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 28c51f93b6260224c867f45f411a0e85, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 5cf75de448062894bb741dde29e856b9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1605,8 +1615,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 60cfd84ae231a4943b3f0f6cf0dcf409, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: dca80b13fe7d6964ba762a3da546bfa4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1817,8 +1827,8 @@ MonoBehaviour:
   m_text: "Info about Biology: \nBiology is  the scientific study of Life and Living
     Organisms\nBio means \"Living Things\" and logos means \"study\""
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 84bf34a743a374c428c79e329d200592, type: 2}
-  m_sharedMaterial: {fileID: -8741128925397584353, guid: 84bf34a743a374c428c79e329d200592, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a01da80293c312d4b828ba2007442234, type: 2}
+  m_sharedMaterial: {fileID: -7349764162995004477, guid: a01da80293c312d4b828ba2007442234, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1842,8 +1852,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1951,15 +1961,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: '?'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 84bf34a743a374c428c79e329d200592, type: 2}
-  m_sharedMaterial: {fileID: -8741128925397584353, guid: 84bf34a743a374c428c79e329d200592, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 95d74259bde4dbb408930d6edbdd9309, type: 2}
+  m_sharedMaterial: {fileID: -7884127582278487474, guid: 95d74259bde4dbb408930d6edbdd9309, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282795696
+  m_fontColor: {r: 0.6886792, g: 0.27547166, b: 0.27547166, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1982,7 +1992,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
