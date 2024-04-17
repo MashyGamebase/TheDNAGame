@@ -24,14 +24,6 @@ public class LoadMenuControl : MonoBehaviour
 
         yield return new WaitForSeconds(Random.Range(1, 3));
 
-        loadFill.fillAmount = 30 * MULTIPLIER;
-
-        yield return new WaitForSeconds(Random.Range(1, 3));
-
-        loadFill.fillAmount = 70 * MULTIPLIER;
-
-        yield return new WaitForSeconds(Random.Range(1, 3));
-
         loadFill.fillAmount = 90 * MULTIPLIER;
 
         yield return new WaitForSeconds(Random.Range(1, 3));
