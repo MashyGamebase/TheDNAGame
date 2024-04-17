@@ -1634,6 +1634,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigameID: 0
+  winButton: {fileID: 8424207748672270304}
+  loseButton: {fileID: 2818719024384994580}
   headerText: {fileID: 5438274995317925976}
   score: 0
   timeLeft: 0
@@ -2324,7 +2326,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5438274997178390501}
         m_TargetAssemblyTypeName: GameWinLose, Assembly-CSharp
-        m_MethodName: OnClick_MainMenuButton
+        m_MethodName: OnClick_NextSceneButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
