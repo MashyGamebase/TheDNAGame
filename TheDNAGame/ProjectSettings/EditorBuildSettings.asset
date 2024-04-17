@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/06CellMemory.unity
     guid: 15f87f9b6d4cce14abb32cb4a3903e20
   - enabled: 1
+    path: Assets/Scenes/07 Cell Structures.unity
+    guid: 56d6727002435044da2468847bc030e5
+  - enabled: 1
     path: Assets/Scenes/04CellDivision.unity
     guid: ed9dd949da56d1549a1109fd37ab7612
   - enabled: 1
