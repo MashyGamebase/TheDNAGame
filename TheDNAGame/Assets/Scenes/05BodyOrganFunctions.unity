@@ -230,11 +230,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 842008244978331280, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
       propertyPath: minigameTitles.Array.data[3]
-      value: Central Dogma ofMolecular Biology (DNA)
+      value: How to Play?
       objectReference: {fileID: 0}
     - target: {fileID: 842008244978331280, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
       propertyPath: minigameTitles.Array.data[4]
-      value: Human Organ Function
+      value: How to Play?
       objectReference: {fileID: 0}
     - target: {fileID: 842008244978331280, guid: 4d60f0112341cb7408b640c59b26b0fd, type: 3}
       propertyPath: disabledGameobjects.Array.size
