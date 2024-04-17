@@ -246,13 +246,6 @@ public class DragMatchOrgans : MonoBehaviour
 
     void ShowPopup(int index, string organ1, string organ2)
     {
-        StartCoroutine(showPopupCo(index, organ1, organ2));
-    }
-
-    IEnumerator showPopupCo(int index, string organ1, string organ2)
-    {
-        yield return new WaitForSeconds(0.5f);
-
         popupUI.SetActive(true);
         popupText.text = "Explanation\n" + $"{organ1} -> {organ2}\n\n" + descriptionText[index];
     }

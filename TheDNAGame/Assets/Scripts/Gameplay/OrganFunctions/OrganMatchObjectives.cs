@@ -103,6 +103,13 @@ public class OrganMatchObjectives : MonoBehaviour
 
     public void ShowRiddle(int index)
     {
+        StartCoroutine(showRiddleDelayCo(index));
+    }
+
+    IEnumerator showRiddleDelayCo(int index)
+    {
+        yield return new WaitForSeconds(0.5f);
+
         if (matches < 7)
         {
             popupUIText.text = "";
