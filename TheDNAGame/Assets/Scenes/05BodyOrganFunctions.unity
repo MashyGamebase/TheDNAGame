@@ -3312,7 +3312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7741052736154249681, guid: 61784ed77a5522041889b291f26558e0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7783084724365086573, guid: 61784ed77a5522041889b291f26558e0, type: 3}
       propertyPath: m_IsActive
@@ -4661,6 +4661,7 @@ MonoBehaviour:
   gameWinLose: {fileID: 599324550}
   matches: 0
   matchesText: {fileID: 802696076}
+  questText: {fileID: 1393371043}
   score: 0
   scoreText: {fileID: 1041389091}
   popupriddleUI: {fileID: 747487980}

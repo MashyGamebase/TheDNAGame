@@ -107,7 +107,19 @@ public class DragUIImage : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                 if (hitMatchCellPart != null)
                 {
                     // Do something with the hitMatchCellPart (e.g., call a method)
-                    hitMatchCellPart.MatchCells(thisCellPart);
+                    if(hitMatchCellPart.MatchCells(thisCellPart, GetComponent<Image>().sprite))
+                    {
+                        this.enabled = false;
+                        var image = GetComponent<Image>();
+                        var tempColor = image.color;
+                        tempColor.r = 0;
+                        tempColor.g = 255;
+                        tempColor.b = 0;
+                        tempColor.a = 0.5f;
+                        image.color = tempColor;
+                        if (m_DraggingIcon != null)
+                            Destroy(m_DraggingIcon);
+                    }
                 }
             }
         }

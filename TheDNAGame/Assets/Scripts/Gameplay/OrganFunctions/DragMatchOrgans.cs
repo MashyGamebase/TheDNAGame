@@ -87,7 +87,7 @@ public class DragMatchOrgans : MonoBehaviour
                                     OrganMatchObjectives.instance.AddMatches(1);
                                     OrganMatchObjectives.instance.score += 10;
                                     VAFeedback.Instance.RightAnswer(hitInfo.transform);
-                                    ShowPopup(0, "Heart", "Lung");
+                                    ShowPopup(0);
                                     //OrganMatchObjectives.instance.AddText(descriptionText[0]);
                                     OrganMatchObjectives.instance.ShowRiddle(3);
                                 }
@@ -105,7 +105,7 @@ public class DragMatchOrgans : MonoBehaviour
                                     OrganMatchObjectives.instance.AddMatches(1);
                                     OrganMatchObjectives.instance.score += 10;
                                     VAFeedback.Instance.RightAnswer(hitInfo.transform);
-                                    ShowPopup(2, "Heart", "Kidney");
+                                    ShowPopup(2);
                                     OrganMatchObjectives.instance.ShowRiddle(6);
                                     //OrganMatchObjectives.instance.AddText(descriptionText[2]);
                                 }
@@ -123,7 +123,7 @@ public class DragMatchOrgans : MonoBehaviour
                                     OrganMatchObjectives.instance.AddMatches(1);
                                     OrganMatchObjectives.instance.score += 10;
                                     VAFeedback.Instance.RightAnswer(hitInfo.transform);
-                                    ShowPopup(1, "Heart", "Liver");
+                                    ShowPopup(1);
                                     OrganMatchObjectives.instance.ShowRiddle(4);
                                     //OrganMatchObjectives.instance.AddText(descriptionText[1]);
                                 }
@@ -145,7 +145,7 @@ public class DragMatchOrgans : MonoBehaviour
                                 OrganMatchObjectives.instance.AddMatches(1);
                                 OrganMatchObjectives.instance.score += 10;
                                 VAFeedback.Instance.RightAnswer(hitInfo.transform);
-                                ShowPopup(0, "Lung", "Heart");
+                                ShowPopup(0);
                                 OrganMatchObjectives.instance.ShowRiddle(0);
                                 //OrganMatchObjectives.instance.AddText(descriptionText[0]);
                             }
@@ -172,7 +172,7 @@ public class DragMatchOrgans : MonoBehaviour
                                 OrganMatchObjectives.instance.AddMatches(1);
                                 OrganMatchObjectives.instance.score += 10;
                                 VAFeedback.Instance.RightAnswer(hitInfo.transform);
-                                ShowPopup(0, "Kidney", "Heart");
+                                ShowPopup(0);
                                 OrganMatchObjectives.instance.ShowRiddle(1);
                                 //OrganMatchObjectives.instance.AddText(descriptionText[0]);
                             }
@@ -200,7 +200,7 @@ public class DragMatchOrgans : MonoBehaviour
                                     OrganMatchObjectives.instance.AddMatches(1);
                                     OrganMatchObjectives.instance.score += 10;
                                     VAFeedback.Instance.RightAnswer(hitInfo.transform);
-                                    ShowPopup(0, "Liver", "Heart");
+                                    ShowPopup(0);
                                     OrganMatchObjectives.instance.ShowRiddle(5);
                                     //OrganMatchObjectives.instance.AddText(descriptionText[0]);
                                 }
@@ -218,7 +218,7 @@ public class DragMatchOrgans : MonoBehaviour
                                     OrganMatchObjectives.instance.AddMatches(1);
                                     OrganMatchObjectives.instance.score += 10;
                                     VAFeedback.Instance.RightAnswer(hitInfo.transform);
-                                    ShowPopup(1, "Liver", "Kidney");
+                                    ShowPopup(1);
                                     OrganMatchObjectives.instance.ShowRiddle(2);
                                     //OrganMatchObjectives.instance.AddText(descriptionText[1]);
                                 }
@@ -244,9 +244,8 @@ public class DragMatchOrgans : MonoBehaviour
     }
 
 
-    void ShowPopup(int index, string organ1, string organ2)
+    void ShowPopup(int index)
     {
-        popupUI.SetActive(true);
-        popupText.text = "Explanation\n" + $"{organ1} -> {organ2}\n\n" + descriptionText[index];
+        OrganMatchObjectives.instance.ShowDescText(descriptionText[index]);
     }
 }

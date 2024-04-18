@@ -23,6 +23,8 @@ public class OrganMatchObjectives : MonoBehaviour
 
     public static OrganMatchObjectives instance;
 
+    public TextMeshProUGUI questText;
+
     public int score;
     public TextMeshProUGUI scoreText;
 
@@ -115,6 +117,34 @@ public class OrganMatchObjectives : MonoBehaviour
             popupUIText.text = "";
             popupriddleUI.SetActive(true);
             popupUIText.text = riddleText[index];
+        }
+    }
+    public void ShowDescText(string text)
+    {
+        StartCoroutine(ShowText(text));
+    }
+
+    IEnumerator ShowText(string text)
+    {
+        questText.text = "";
+
+        for (int i = 0; i < text.Length; i++)
+        if (matches < 7)
+        {
+            questText.text += text[i];
+            yield return new WaitForSeconds(delayBetweenCharacters);
+        }
+
+        if (matches >= 7)
+        {
+            if (score > 0)
+            {
+                GameManager.Instance.isLevelComplete[levelId] = true;
+            }
+            gameWinLose.GetComponent<GameWinLose>().timeLeft = currentTime;
+            gameWinLose.GetComponent<GameWinLose>().score = score;
+            gameWinLose.SetActive(true);
+            popupUIText.text = "";
         }
     }
 }

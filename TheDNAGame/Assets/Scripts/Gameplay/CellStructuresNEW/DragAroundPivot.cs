@@ -21,7 +21,7 @@ public class DragAroundPivot : MonoBehaviour
 
     private void Update()
     {
-        if (!isUIBeingDragged)
+        if (!isUIBeingDragged && !CellObjectives.instance.isWin)
         {
             if (Input.GetMouseButtonDown(0))
             {
