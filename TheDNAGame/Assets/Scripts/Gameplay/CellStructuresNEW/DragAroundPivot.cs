@@ -14,6 +14,8 @@ public class DragAroundPivot : MonoBehaviour
 
     public static DragAroundPivot instance;
 
+    public CellObjectives cellObjectives;
+
     private void Awake()
     {
         instance = this;
@@ -21,13 +23,13 @@ public class DragAroundPivot : MonoBehaviour
 
     private void Update()
     {
-        if (!isUIBeingDragged && !CellObjectives.instance.isWin)
+        if (!isUIBeingDragged && !cellObjectives.isWin)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
             {
                 lastMousePosition = Input.mousePosition;
             }
-            else if (Input.GetMouseButton(0))
+            else if (Input.GetMouseButton(0) || Input.touchCount > 0)
             {
                 // Introduce a delay before rotation starts
                 if (Time.timeSinceLevelLoad > 0.1f) // Adjust the delay as needed

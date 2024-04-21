@@ -34,7 +34,11 @@ public class CellObjectives : MonoBehaviour
     public void AddMatches(int i, int scoreToAdd)
     {
         completedMatches += i;
-        score += scoreToAdd;
+
+        if(score <= 0)
+            score = 0;
+        else
+            score += scoreToAdd;
         CheckCompletion();
     }
 

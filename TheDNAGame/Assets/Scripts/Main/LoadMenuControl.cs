@@ -24,6 +24,10 @@ public class LoadMenuControl : MonoBehaviour
 
         yield return new WaitForSeconds(Random.Range(1, 3));
 
+        loadFill.fillAmount = 30 * MULTIPLIER;
+
+        yield return new WaitForSeconds(Random.Range(1, 3)); // Range(inclusive, exclusive) (1, 4) (1 2 3)
+
         loadFill.fillAmount = 90 * MULTIPLIER;
 
         yield return new WaitForSeconds(Random.Range(1, 3));
@@ -32,8 +36,10 @@ public class LoadMenuControl : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
+        // you waited 3.5 or 6.5 seconds
+
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
 
         // sceneLoaded = true;
     }
-}
+};

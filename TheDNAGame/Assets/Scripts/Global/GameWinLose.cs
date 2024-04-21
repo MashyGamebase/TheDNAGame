@@ -77,17 +77,19 @@ public class GameWinLose : MonoBehaviour
 
     public void OnClick_NextSceneButton()
     {
-        GameManager.Instance.SaveData();
+        if(GameManager.Instance != null)
+            GameManager.Instance.SaveData();
 
         Time.timeScale = 1.0f;
 
         Debug.Log(SceneManager.GetActiveScene().buildIndex);
 
+        /// Build Index
         switch (SceneManager.GetActiveScene().buildIndex)
         {
-            case 3:
-            case 5:
-            case 7:
+            case 4: // buildIndex = 4 == 04 Cell Division
+            case 6: // buildIndex = 6 == 02 Feedback Mechanism -- might change
+            case 8: // buildIndex = 8 == 01 Recombinant DNA -- might change
                 SceneManager.LoadScene(0);
                 break;
             default:

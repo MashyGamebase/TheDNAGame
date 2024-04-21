@@ -49,7 +49,6 @@ public class OrganMatchObjectives : MonoBehaviour
     private void Start()
     {
         currentTime = totalTime;
-        ShowRiddle(0);
     }
 
     private void Update()
@@ -121,6 +120,7 @@ public class OrganMatchObjectives : MonoBehaviour
     }
     public void ShowDescText(string text)
     {
+        StopCoroutine(ShowText(text));
         StartCoroutine(ShowText(text));
     }
 
