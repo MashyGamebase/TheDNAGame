@@ -571,6 +571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragOnSurfaces: 1
   thisCellPart: 6
+  destinationTag: DropZone
 --- !u!114 &211615559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,6 +794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragOnSurfaces: 1
   thisCellPart: 5
+  destinationTag: DropZone
 --- !u!114 &243442705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,7 +1069,7 @@ GameObject:
   - component: {fileID: 378788906}
   m_Layer: 0
   m_Name: Drop-Endoplasmic
-  m_TagString: Untagged
+  m_TagString: DropZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1308,6 +1310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragOnSurfaces: 1
   thisCellPart: 6
+  destinationTag: DropZone
 --- !u!114 &396725101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1554,7 +1557,7 @@ GameObject:
   - component: {fileID: 480461667}
   m_Layer: 0
   m_Name: Drop-Golgi
-  m_TagString: Untagged
+  m_TagString: DropZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2040,6 +2043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragOnSurfaces: 1
   thisCellPart: 6
+  destinationTag: DropZone
 --- !u!114 &603669062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3164,6 +3168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragOnSurfaces: 1
   thisCellPart: 3
+  destinationTag: DropZone
 --- !u!114 &718942771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3394,6 +3399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragOnSurfaces: 1
   thisCellPart: 2
+  destinationTag: DropZone
 --- !u!114 &821267483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3550,7 +3556,7 @@ GameObject:
   - component: {fileID: 879264438}
   m_Layer: 0
   m_Name: Drop-Nucleus
-  m_TagString: Untagged
+  m_TagString: DropZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4039,6 +4045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragOnSurfaces: 1
   thisCellPart: 0
+  destinationTag: DropZone
 --- !u!1001 &1081046353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4607,6 +4614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragOnSurfaces: 1
   thisCellPart: 6
+  destinationTag: DropZone
 --- !u!114 &1151336826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4833,7 +4841,7 @@ GameObject:
   - component: {fileID: 1208697890}
   m_Layer: 0
   m_Name: Drop-CellMembrane
-  m_TagString: Untagged
+  m_TagString: DropZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6168,7 +6176,7 @@ GameObject:
   - component: {fileID: 1657706796}
   m_Layer: 0
   m_Name: Drop-Mitochondria
-  m_TagString: Untagged
+  m_TagString: DropZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6477,7 +6485,7 @@ GameObject:
   - component: {fileID: 1785661930}
   m_Layer: 0
   m_Name: Drop-Lysosome
-  m_TagString: Untagged
+  m_TagString: DropZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6931,6 +6939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragOnSurfaces: 1
   thisCellPart: 1
+  destinationTag: DropZone
 --- !u!114 &1857365416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7168,12 +7177,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!114 &1883797476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7543,6 +7552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragOnSurfaces: 1
   thisCellPart: 4
+  destinationTag: DropZone
 --- !u!114 &1999378264
 MonoBehaviour:
   m_ObjectHideFlags: 0
